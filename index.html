@@ -107,6 +107,9 @@
         border: 6px solid grey;
         border-radius: 5px;
     }
+    .obscure{
+        filter: brightness(0.3);
+    }
 </style>
 
 <body>
@@ -118,8 +121,11 @@
         </div>
         <div id="Dx">
             <ul>
-                <li v-for="slide in slides">
-                    <img v-bind:src="slide.image" alt="">
+                <li v-if="counter != n" v-for="(slide, n) in slides">
+                    <img v-bind:src="slide.image" class="obscure" alt="">
+                </li>
+                <li v-else>
+                    <img v-bind:src="slide.image" alt="" class="activethumb">
                 </li>
             </ul>
         </div>
