@@ -95,7 +95,8 @@
     .Imagine {
         object-fit: cover;
         margin-left: -15.2rem;
-        height: 417px;
+        width: 741px;
+    height: 417px;
     }
 
     .button {
@@ -124,12 +125,12 @@
         </div>
         <div class="button">
             <div class="prev">
-                <div v-on:click="counter += 1" class="arrUp">
+                <div @click="minus" class="arrUp">
                     <i class="fas fa-chevron-up"></i>
                 </div>
             </div>
             <div class="after">
-                <div v-on:click="counter -= 1" class="arrDw">
+                <div @click="plus" class="arrDw">
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
