@@ -5,33 +5,136 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Vue Slider</title>
 </head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    li>img {
+        height: 80.2px;
+        width: 405px;
+    }
+
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 800px;
+    }
+
+    #Dx {
+        display: flex;
+        flex-direction: column;
+        height: 300px;
+        width: 150px;
+    }
+
+    #Sx {
+        width: 500px;
+        height: 300px;
+        margin-left: 1rem;
+    }
+
+    .arrUp {
+        border-radius: 50%;
+        background-color: #cccccc;
+        height: 1.5rem;
+        width: 1.5rem;
+        border: none;
+        position: relative;
+        bottom: 125px;
+        left: 385px;
+    }
+
+    .arrDw {
+        border-radius: 50%;
+        background-color: #cccccc;
+        height: 1.5rem;
+        width: 1.5rem;
+        border: none;
+        position: relative;
+        top: 242px;
+        left: 385px;
+    }
+
+    .fas {
+        margin-left: 3px;
+        font-size: 21px;
+        color: black;
+        margin-top: 1px;
+    }
+
+    .bot {
+        position: relative;
+        bottom: 32%;
+        right: 45%;
+        z-index: 1;
+        color: white;
+    }
+
+    .sub {
+        position: relative;
+        bottom: 30%;
+        right: 45%;
+        font-size: small;
+        z-index: 1;
+        color: white;
+    }
+
+    .Imagine {
+        object-fit: cover;
+        margin-left: -15.2rem;
+        height: 417px;
+    }
+
+    .button {
+        position: absolute;
+    }
+
+    .activethumb {
+        border: 6px solid grey;
+        border-radius: 5px;
+    }
+</style>
 
 <body>
-
     <div id="container">
-        <div class="preview">
-            <img :src="slides[counter].image" alt="">
-            <h2>{{slides[counter].title}}</h2>
-            <p>{{slides[counter].text}}</p>
+        <div id="Sx">
+            <img :src="slides[counter].image" class="Imagine" alt="">
+            <h2 class="bot">{{slides[counter].title}}</h2>
+            <p class="sub">{{slides[counter].text}}</p>
         </div>
-        <div class="carousel">
-            <div class="button">
-                <span @click="GoUp">Su</span>
-                <span @click="GoDown">Giù</span>
-            </div>
+        <div id="Dx">
             <ul>
                 <li v-for="slide in slides">
                     <img v-bind:src="slide.image" alt="">
                 </li>
             </ul>
+        </div>
+        <div class="button">
+            <div class="prev">
+                <div v-on:click="counter += 1" class="arrUp">
+                    <i class="fas fa-chevron-up"></i>
+                </div>
             </div>
-
-    </div>
-
+            <div class="after">
+                <div v-on:click="counter -= 1" class="arrDw">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            </div>
+            </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="./main.js"></script>
 </body>
-
-</html>

@@ -3,6 +3,7 @@ const app = new Vue({
     data: {
 
         slides:
+
             [{
                 image: './img/01.jpg',
                 title: 'Svezia',
@@ -27,8 +28,13 @@ const app = new Vue({
                 image: './img/05.jpg',
                 title: 'Paradise',
                 text: 'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam'
-            }
+                },
+
             ],
-        counter = 0
+        counter: 0
+    },
+    methods: {
+
     }
 })
+
