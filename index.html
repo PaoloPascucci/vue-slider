@@ -12,11 +12,22 @@
 
     <div id="container">
         <div class="preview">
-
+            <img :src="slides[counter].image" alt="">
+            <h2>{{slides[counter].title}}</h2>
+            <p>{{slides[counter].text}}</p>
         </div>
         <div class="carousel">
+            <div class="button">
+                <span @click="GoUp">Su</span>
+                <span @click="GoDown">Giù</span>
+            </div>
+            <ul>
+                <li v-for="slide in slides">
+                    <img v-bind:src="slide.image" alt="">
+                </li>
+            </ul>
+            </div>
 
-        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
